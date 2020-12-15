@@ -1,13 +1,10 @@
-body {
-	width: 100%;
-}
-
 #snakeboard {
-	position: absolute;
-	display: flex;
+	position: fixed;
+	display: block;
 	left: 0;
 	right: 0;
 	margin: auto;
+	width: auto;
 }
 
 #score {
@@ -31,10 +28,6 @@ body {
 	position: relative;
 	top: 50%;
 	left: 50%;
-}
-
-#hide {
-	display: none;
 }
 
 h1 {

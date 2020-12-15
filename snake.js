@@ -35,14 +35,14 @@ document.getElementById('start-btn').addEventListener('click', function () {
 	changeText();
 });
 
-function refreshPage() {
-	window.location.reload();
-}
-
 // Refresh page
 document.getElementById('refresh-btn').addEventListener('click', function () {
 	refreshPage();
 });
+
+function refreshPage() {
+	window.location.reload();
+}
 
 // 2x mode
 function changeText() {
