@@ -1,10 +1,12 @@
 // SnakeScript
 
+// Game Board
 const board_border = 'black';
 const board_background = 'white';
 const snake_col = 'white';
 const snake_border = 'black';
 
+// Snake Start Position
 let snake = [
 	{ x: 100, y: 200 },
 	{ x: 90, y: 200 },
@@ -13,6 +15,7 @@ let snake = [
 	{ x: 60, y: 200 }
 ];
 
+// Game Parameters
 let score = 0;
 let changing_direction = false;
 let food_x;
@@ -23,46 +26,43 @@ let dy = 0;
 const snakeboard = document.getElementById('snakeboard');
 const snakeboard_ctx = snakeboard.getContext('2d');
 
+// Starts Game
 document.getElementById('start-btn').addEventListener('click', function () {
 	main();
 	gen_food();
 	changeText();
 });
 
+// Page Refresh
 document.getElementById('refresh-btn').addEventListener('click', function () {
 	refreshPage();
 });
 
-// // Refresh page
-// document.getElementById('refresh-btn').addEventListener('click', function () {
-// 	refreshPage();
-// });
+function refreshPage() {
+	window.location.reload();
+}
 
-// function refreshPage() {
-// 	window.location.reload();
-// }
+// 2x Mode
+function changeText() {
+	document.getElementById('start-btn').innerHTML = '2x Speed';
+}
 
-// // 2x mode
-// function changeText() {
-// 	document.getElementById('start-btn').innerHTML = '2x Speed';
-// }
+// Snake Moves Direction With Keys
+document.addEventListener('keydown', change_direction);
 
-// document.addEventListener('keydown', change_direction);
+// Game Run
+function main() {
+	if (has_game_ended()) return;
 
-// // main function called repeatedly to keep the game running
-// function main() {
-// 	if (has_game_ended()) return;
-
-// 	changing_direction = false;
-// 	setTimeout(function onTick() {
-// 		clear_board();
-// 		drawFood();
-// 		move_snake();
-// 		drawSnake();
-// 		// Repeat
-// 		main();
-// 	}, 100);
-// }
+	changing_direction = false;
+	setTimeout(function onTick() {
+		clear_board();
+		drawFood();
+		move_snake();
+		drawSnake();
+		main();
+	}, 100);
+}
 
 // // draw a border around the canvas
 // function clear_board() {
