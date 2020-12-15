@@ -86,29 +86,26 @@ function drawFood() {
 	snakeboard_ctx.strokeRect(food_x, food_y, 10, 10);
 }
 
-// // Draw one snake part
-// function drawSnakePart(snakePart) {
-// 	// Set the colour of the snake part
-// 	snakeboard_ctx.fillStyle = snake_col;
-// 	// Set the border colour of the snake part
-// 	snakeboard_ctx.strokestyle = snake_border;
-// 	// Draw a "filled" rectangle to represent the snake part at the coordinates
-// 	// the part is located
-// 	snakeboard_ctx.fillRect(snakePart.x, snakePart.y, 10, 10);
-// 	// Draw a border around the snake part
-// 	snakeboard_ctx.strokeRect(snakePart.x, snakePart.y, 10, 10);
-// }
+// Draw Snake Cube
 
-// function has_game_ended() {
-// 	for (let i = 4; i < snake.length; i++) {
-// 		if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) return true;
-// 	}
-// 	const hitLeftWall = snake[0].x < 0;
-// 	const hitRightWall = snake[0].x > snakeboard.width - 10;
-// 	const hitToptWall = snake[0].y < 0;
-// 	const hitBottomWall = snake[0].y > snakeboard.height - 10;
-// 	return hitLeftWall || hitRightWall || hitToptWall || hitBottomWall;
-// }
+function drawSnakePart(snakePart) {
+	snakeboard_ctx.fillStyle = snake_col;
+	snakeboard_ctx.strokestyle = snake_border;
+	snakeboard_ctx.fillRect(snakePart.x, snakePart.y, 10, 10);
+	snakeboard_ctx.strokeRect(snakePart.x, snakePart.y, 10, 10);
+}
+
+// Game End Parameters
+function has_game_ended() {
+	for (let i = 4; i < snake.length; i++) {
+		if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) return true;
+	}
+	const hitLeftWall = snake[0].x < 0;
+	const hitRightWall = snake[0].x > snakeboard.width - 10;
+	const hitTopWall = snake[0].y < 0;
+	const hitBottomWall = snake[0].y > snakeboard.height - 10;
+	return hitLeftWall || hitRightWall || hitTopWall || hitBottomWall;
+}
 
 // function random_food(min, max) {
 // 	return Math.round((Math.random() * (max - min) + min) / 10) * 10;
