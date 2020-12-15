@@ -64,31 +64,27 @@ function main() {
 	}, 100);
 }
 
-// // draw a border around the canvas
-// function clear_board() {
-// 	//  Select the colour to fill the drawing
-// 	snakeboard_ctx.fillStyle = board_background;
-// 	//  Select the colour for the border of the canvas
-// 	snakeboard_ctx.strokestyle = board_border;
-// 	// Draw a "filled" rectangle to cover the entire canvas
-// 	snakeboard_ctx.fillRect(0, 0, snakeboard.width, snakeboard.height);
-// 	// Draw a "border" around the entire canvas
-// 	snakeboard_ctx.strokeRect(0, 0, snakeboard.width, snakeboard.height);
-// 	snakeboard_ctx.lineWidth = 2;
-// }
+// Draw Game Board
+function clear_board() {
+	snakeboard_ctx.fillStyle = board_background;
+	snakeboard_ctx.strokestyle = board_border;
+	snakeboard_ctx.fillRect(0, 0, snakeboard.width, snakeboard.height);
+	snakeboard_ctx.strokeRect(0, 0, snakeboard.width, snakeboard.height);
+	snakeboard_ctx.lineWidth = 2;
+}
 
-// // Draw the snake on the canvas
-// function drawSnake() {
-// 	// Draw each part
-// 	snake.forEach(drawSnakePart);
-// }
+// Draw Snake
+function drawSnake() {
+	snake.forEach(drawSnakePart);
+}
 
-// function drawFood() {
-// 	snakeboard_ctx.fillStyle = 'black';
-// 	snakeboard_ctx.strokestyle = 'white';
-// 	snakeboard_ctx.fillRect(food_x, food_y, 10, 10);
-// 	snakeboard_ctx.strokeRect(food_x, food_y, 10, 10);
-// }
+// Draw Food
+function drawFood() {
+	snakeboard_ctx.fillStyle = 'black';
+	snakeboard_ctx.strokestyle = 'white';
+	snakeboard_ctx.fillRect(food_x, food_y, 10, 10);
+	snakeboard_ctx.strokeRect(food_x, food_y, 10, 10);
+}
 
 // // Draw one snake part
 // function drawSnakePart(snakePart) {
