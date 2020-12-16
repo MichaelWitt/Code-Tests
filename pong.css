@@ -1,15 +1,11 @@
-#snakeboard {
+#pong {
+	border: 2px solid #fff;
 	position: fixed;
-	display: block;
+	margin: auto;
 	left: 0;
 	right: 0;
-	margin: auto;
 	width: auto;
-}
-
-#score {
-	text-align: center;
-	font-size: 120px;
+	display: block;
 }
 
 #start-btn {
