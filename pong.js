@@ -154,7 +154,7 @@ function update() {
 	// computer plays for itself, and we must be able to beat it
 	// simple AI
 
-	com.y += (ball.y - (com.y + com.height / 2)) * 0.1;
+	com.y += (ball.y - (com.y + com.height / 1.5)) * 0.1;
 
 	// when the ball collides with bottom and top walls we inverse the y velocity.
 
